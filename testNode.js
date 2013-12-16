@@ -10,6 +10,6 @@ app.configure(function(){
 });
 
 // starts
-var portNum = 3000;
+var portNum = 80;
 app.listen(portNum);
 console.log("Express server listening on port %d in %s mode", portNum, app.settings.env);
