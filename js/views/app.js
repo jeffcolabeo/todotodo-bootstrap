@@ -36,6 +36,16 @@ define(['jquery', 'underscore', 'backbone', 'collections/todos', 'views/todos', 
             Todos.bind('all', this.render);
 
             Todos.fetch();
+
+            $(document).ready(function($) {
+                $('body').on('click','.install-link',function(){
+                    var url = $(this).attr('link');
+                    if (window.location.host.indexOf('colabeo.com')>=0 && window.chrome && window.chrome.webstore) chrome.webstore.install(url);
+                    else {
+                        window.open(url, '_blank');
+                    }
+                });
+            });
         },
 
         // Re-rendering the App just means refreshing the statistics -- the rest
