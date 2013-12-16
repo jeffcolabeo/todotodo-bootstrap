@@ -18,3 +18,11 @@ body {
 #todo-stats {
     margin-bottom: 10px;
 }
+
+#todo-list .show-item {
+    line-height: 30px;
+}
+
+#todo-list .todo-edit, #todo-list .todo-destroy, #todo-list .item-thumbnail {
+    cursor: pointer;
+}

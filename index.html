@@ -6,8 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="abiyasa">
 
-    <title>Todo Todo App - Backbone - RequireJs</title>
-    
+    <title>Colabeo</title>
+    <link rel="icon" type="image/png" href="http://colabeo-alpha.herokuapp.com/favicon.png">
     <link rel="stylesheet" href="css/fontstyle.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-responsive.css">
@@ -17,45 +17,55 @@
 </head>
 
 <body>
-    <div id="todoapp">        
-        <div class="container">            
+    <div id="todoapp">
+        <div class="container">
             <div class="row">
                 <div class="page-header">
-                    <h1>Todo Todo
-                        <small>Enough TODO for the rest of your life</small>
+                    <h1>Sync
+                        <small>You can co-browse any site in this tab</small>
                     </h1>
                 </div>
             </div>
-            
+            <div class='row'>
+                <form action="http://google.com/cse">
+                    <div class='input-append' style="margin-top:50px; margin-left:30%">
+                        <img src="https://cdn1.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/32/social_google_box_white.png" class="img-circle">
+                        <input type="hidden" name="cx" value="017660757028075324243:h2powk7yzxu" />
+                        <!--<input type="hidden" name="ie" value="UTF-8" />-->
+                        <input class="span5" name="q" id="main_search" type="text" >
+                        <input class="btn btn-primary" type="submit" name="sa" value="search">
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="page-header">
+                    <h1>Speed Dial
+                        <small>Add your favorite co-browsing sites here</small>
+                    </h1>
+                </div>
+            </div>
+
             <div class="row">
                 <div id="create-todo" class="well">
-                    <input id="new-todo" placeholder="What needs to be done?" type="text" class="span8" />
-                    <span class="ui-tooltip-top help-inline" style="display:none;">Press Enter to save this task</span>
+                    <input id="new-todo" placeholder="Type address to add to your Speed Dial. Ex, google.com" type="text" class="span8" />
+                    <span class="ui-tooltip-top help-inline" style="display:none;">Press Enter to add</span>
                 </div>
             </div>
             
-            <div class="row">
+            <!--<div class="row">
                 <div id="mark-all-done"></div>
-            </div>
+            </div>-->
             
             <div class="row">
                 <table id="todos" class="table table-bordered table-striped">
-                    <tbody id="todo-list"></tbody>
+                    <div id="todo-list" class="row"></div>
                 </table>
             </div>
-            
-            <div class="row">
+
+            <!--<div class="row">
                 <div id="todo-stats"></div>
-            </div>
-            
-            <div class="row">
-                <div id="credits" class="well">
-                    <p>Based on 
-                        <a href="http://addyosmani.github.com/todomvc/">TodoMVC</a>. Icons by 
-                        <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>
-                    </p>
-                </div>
-            </div>
+            </div>-->
+
         </div>
     </div>
 </body>

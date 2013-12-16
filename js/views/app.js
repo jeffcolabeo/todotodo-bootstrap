@@ -72,8 +72,15 @@ define(['jquery', 'underscore', 'backbone', 'collections/todos', 'views/todos', 
 
         // Generate the attributes for a new Todo item.
         newAttributes: function () {
+            var getHostName = function ( url ) {
+                return url;
+                var a = document.createElement('a');
+                a.href = url;
+                return a.hostname;
+            };
+            var hostname = getHostName(this.input.val());
             return {
-                content: this.input.val(),
+                content: hostname,
                 order: Todos.nextOrder(),
                 done: false
             };

@@ -5,7 +5,9 @@ define(['jquery', 'underscore', 'backbone', 'text!templates/todos.html'], functi
     var TodoView = Backbone.View.extend({
 
         //... is a table row tag.
-        tagName: "tr",
+        tagName: "div",
+
+        className: "span3",
 
         // Cache the template function for a single item.
         template: _.template(todosTemplate),
@@ -65,8 +67,15 @@ define(['jquery', 'underscore', 'backbone', 'text!templates/todos.html'], functi
 
         // Close the `"editing"` mode, saving changes to the todo.
         close: function () {
+            var getHostName = function ( url ) {
+                return url;
+                var a = document.createElement('a');
+                a.href = url;
+                return a.hostname;
+            };
+            var hostname = getHostName(this.input.val());
             this.model.save({
-                content: this.input.val()
+                content: hostname
             });
             this.switchMode('show');
         },
